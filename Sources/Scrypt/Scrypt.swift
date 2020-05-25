@@ -26,7 +26,7 @@ public enum ScryptError: Error {
 /// - Throws: [ScryptError](x-source-tag://scryptErrorType)
 public func scrypt(password: [UInt8], salt: [UInt8], length: Int = 64,
                    N: UInt64 = 16384, r: UInt32 = 8, p: UInt32 = 1) throws -> [UInt8] {
-    guard length > 0, length <= 137_438_953_440 else {
+    guard length > 0, UInt64(length) <= 137_438_953_440 else {
         throw ScryptError.invalidLength
     }
     guard r > 0, p > 0, r * p < 1_073_741_824, N.isPowerOfTwo else {
