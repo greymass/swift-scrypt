@@ -1,7 +1,7 @@
-import Scrypt
+import ScryptLegacy
 import XCTest
 
-final class ScryptTests: XCTestCase {
+final class ScryptLegacyTests: XCTestCase {
     let hello = Array("hello".utf8)
 
     func testScrypt() {

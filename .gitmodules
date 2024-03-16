@@ -1,3 +1,3 @@
-[submodule "Sources/libscrypt/libscrypt"]
-	path = Sources/libscrypt/libscrypt
+[submodule "Sources/libscryptLegacy/libscryptLegacy"]
+	path = Sources/libscryptLegacy/libscryptLegacy
 	url = https://github.com/technion/libscrypt.git
