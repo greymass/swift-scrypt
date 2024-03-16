@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-scrypt",
+    name: "swift-scrypt-legacy",
     products: [
         .library(name: "Scrypt", targets: ["Scrypt"]),
     ],
