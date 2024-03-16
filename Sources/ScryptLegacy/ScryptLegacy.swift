@@ -24,7 +24,7 @@ public enum ScryptError: Error {
 /// - Parameter p: Number of parallelizable iterations.
 /// - Returns: Password hash corresponding to given `length`.
 /// - Throws: [ScryptError](x-source-tag://scryptErrorType)
-public func scryptLegacy(password: [UInt8], salt: [UInt8], length: Int = 64,
+public func scrypt(password: [UInt8], salt: [UInt8], length: Int = 64,
                    N: UInt64 = 16384, r: UInt32 = 8, p: UInt32 = 1) throws -> [UInt8] {
     guard length > 0, UInt64(length) <= 137_438_953_440 else {
         throw ScryptError.invalidLength

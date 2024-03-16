@@ -1,4 +1,4 @@
 module libscrypt [system] {
-    header "libscryptLegacy.h"
+    header "libscrypt.h"
     export *
 }
