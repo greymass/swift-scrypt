@@ -1,4 +1,4 @@
-import libscrypt
+import libscryptLegacy
 
 /// All errors `scrypt` can throw.
 /// - Tag: scryptErrorType
