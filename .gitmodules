@@ -1,3 +1,5 @@
-[submodule "Sources/libscryptLegacy/libscryptLegacy"]
-	path = Sources/libscryptLegacy/libscryptLegacy
-	url = https://github.com/greymass/libscrypt-legacy.git
+# We are using a modified version of libscrypt, so we are not including it as a submodule
+#
+# [submodule "Sources/libscryptLegacy/libscryptLegacy"]
+# 	path = Sources/libscryptLegacy/libscryptLegacy
+# 	url = https://github.com/greymass/libscrypt-legacy.git
