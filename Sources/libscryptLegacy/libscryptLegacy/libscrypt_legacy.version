@@ -1,0 +1,8 @@
+libscrypt_legacy {
+	global: libscrypt_check_legacy; 
+libscrypt_hash_legacy; 
+libscrypt_legacy_mcf; 
+libscrypt_salt_gen_legacy; 
+libscrypt_scrypt_legacy;
+	local: *;
+};
