@@ -1,3 +1,0 @@
-[submodule "Sources/libscrypt/libscrypt"]
-	path = Sources/libscrypt/libscrypt
-	url = https://github.com/greymass/libscrypt.git

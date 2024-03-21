@@ -1,4 +1,4 @@
-import libscrypt
+import libscryptLegacy
 
 /// All errors `scrypt` can throw.
 /// - Tag: scryptErrorType
@@ -43,7 +43,7 @@ public func scrypt(password: [UInt8], salt: [UInt8], length: Int = 64,
                 guard !saltptr.isEmpty else {
                     throw ScryptError.emptySalt
                 }
-                result = libscrypt_scrypt(
+                result = libscrypt_scrypt_legacy(
                     passwd.baseAddress!, passwd.count,
                     saltptr.baseAddress!, saltptr.count,
                     N, r, p,

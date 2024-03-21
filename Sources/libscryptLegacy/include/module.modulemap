@@ -1,0 +1,4 @@
+module libscryptLegacy [system] {
+    header "libscryptLegacy.h"
+    export *
+}

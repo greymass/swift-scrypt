@@ -3,21 +3,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-scrypt",
+    name: "swift-scrypt-legacy",
     products: [
-        .library(name: "Scrypt", targets: ["Scrypt"]),
+        .library(name: "ScryptLegacy", targets: ["ScryptLegacy"]),
     ],
     dependencies: [],
     targets: [
-        .target(name: "Scrypt", dependencies: ["libscrypt"]),
+        .target(name: "ScryptLegacy", dependencies: ["libscryptLegacy"]),
         .target(
-            name: "libscrypt",
+            name: "libscryptLegacy",
             sources: [
-                "libscrypt/crypto_scrypt-nosse.c",
-                "libscrypt/sha256.c",
-                "libscrypt/slowequals.c",
+                "libscryptLegacy/crypto_scrypt_legacy-nosse.c",
+                "libscryptLegacy/sha256_legacy.c",
+                "libscryptLegacy/slowequals_legacy.c",
             ]
         ),
-        .testTarget(name: "ScryptTests", dependencies: ["Scrypt"]),
+        .testTarget(name: "ScryptLegacyTests", dependencies: ["ScryptLegacy"]),
     ]
 )
