@@ -12,13 +12,13 @@
 #include <unistd.h>
 #endif
 
-#define RNGDEV "/dev/urandom"
+#define RNGDEV_LEGACY "/dev/urandom"
 
 int libscrypt_salt_gen_legacy(uint8_t *salt, size_t len)
 {
 	unsigned char buf[len];
 	size_t data_read = 0;
-	int urandom = open(RNGDEV, O_RDONLY);
+	int urandom = open(RNGDEV_LEGACY, O_RDONLY);
 
 	if (urandom < 0)
 	{

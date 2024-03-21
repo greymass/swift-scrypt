@@ -60,17 +60,17 @@ int libscrypt_check_legacy(char *mcf, const char *password);
 			  */
 #define SCRYPT_SALT_LEN_LEGACY 16 /* This is just a recommended size */
 /* Standard MCF is:
-   $s1 Identifier, three chars
+   $s1_legacy Identifier, three chars
    $0e0810 Work order and separator, six chars
    Formula for binary to base64 length = ceil(n/3)*4
-   $pcL+DWle903AXcKJVwMffA== Salt is 16 bytes, or 24 in Base64
-   $dn+9ujljVc5JTJMC2fYu1ZEHdJyqYkOurmcrBQbMHUfnD6qxbTmNiR075ohNBZjvp66E2aV1pfOrmyNHUefjMg== Hash is 64 bytes, or 88 in Base64.
+   $pcL+DWle903AXcKJVwMffA== Salt is 16 bytes, or 24 in Base64_legacy
+   $dn+9ujljVc5JTJMC2fYu1ZEHdJyqYkOurmcrBQbMHUfnD6qxbTmNiR075ohNBZjvp66E2aV1pfOrmyNHUefjMg== Hash is 64 bytes, or 88 in Base64_legacy.
    Work order, salt and hash have separators (3)
    3 + 6 + 24 + 88 + 3 + null byte = 125
    This is rounded up to a multiple of four for alignment
 */
 #define SCRYPT_MCF_LEN_LEGACY 128
-#define SCRYPT_MCF_ID_LEGACY "$s1"
+#define SCRYPT_MCF_ID_LEGACY "$s1_legacy"
 #define SCRYPT_N_LEGACY 16384
 #define SCRYPT_r_LEGACY 8
 #define SCRYPT_p_LEGACY 16

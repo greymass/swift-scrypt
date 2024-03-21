@@ -25,9 +25,9 @@ static uint32_t scrypt_ilog2_legacy(uint32_t n)
 }
 
 #ifdef _MSC_VER
-  #define SNPRINTF _snprintf
+  #define SNPRINTF_LEGACY _snprintf
 #else
-  #define SNPRINTF snprintf
+  #define SNPRINTF_LEGACY snprintf
 #endif
 
 int libscrypt_mcf_legacy(uint32_t N, uint32_t r, uint32_t p, const char *salt,

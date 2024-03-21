@@ -43,12 +43,12 @@
 
 #include <stdint.h>
 #ifdef _MSC_VER
-  #define INLINE __inline
+  #define INLINE_LEGACY __inline
 #else
-  #define INLINE inline
+  #define INLINE_LEGACY inline
 #endif
 
-static INLINE uint32_t
+static INLINE_LEGACY uint32_t
 be32dec_legacy(const void *pp)
 {
 	const uint8_t *p = (uint8_t const *)pp;
@@ -57,7 +57,7 @@ be32dec_legacy(const void *pp)
 	    ((uint32_t)(p[1]) << 16) + ((uint32_t)(p[0]) << 24));
 }
 
-static INLINE void
+static INLINE_LEGACY void
 be32enc_legacy(void *pp, uint32_t x)
 {
 	uint8_t * p = (uint8_t *)pp;
@@ -68,7 +68,7 @@ be32enc_legacy(void *pp, uint32_t x)
 	p[0] = (x >> 24) & 0xff;
 }
 
-static INLINE uint64_t
+static INLINE_LEGACY uint64_t
 be64dec_legacy(const void *pp)
 {
 	const uint8_t *p = (uint8_t const *)pp;
@@ -79,7 +79,7 @@ be64dec_legacy(const void *pp)
 	    ((uint64_t)(p[1]) << 48) + ((uint64_t)(p[0]) << 56));
 }
 
-static INLINE void
+static INLINE_LEGACY void
 be64enc_legacy(void *pp, uint64_t x)
 {
 	uint8_t * p = (uint8_t *)pp;
@@ -94,7 +94,7 @@ be64enc_legacy(void *pp, uint64_t x)
 	p[0] = (x >> 56) & 0xff;
 }
 
-static INLINE uint32_t
+static INLINE_LEGACY uint32_t
 le32dec_legacy(const void *pp)
 {
 	const uint8_t *p = (uint8_t const *)pp;
@@ -103,7 +103,7 @@ le32dec_legacy(const void *pp)
 	    ((uint32_t)(p[2]) << 16) + ((uint32_t)(p[3]) << 24));
 }
 
-static INLINE void
+static INLINE_LEGACY void
 le32enc_legacy(void *pp, uint32_t x)
 {
 	uint8_t * p = (uint8_t *)pp;
@@ -114,7 +114,7 @@ le32enc_legacy(void *pp, uint32_t x)
 	p[3] = (x >> 24) & 0xff;
 }
 
-static INLINE uint64_t
+static INLINE_LEGACY uint64_t
 le64dec_legacy(const void *pp)
 {
 	const uint8_t *p = (uint8_t const *)pp;
@@ -125,7 +125,7 @@ le64dec_legacy(const void *pp)
 	    ((uint64_t)(p[6]) << 48) + ((uint64_t)(p[7]) << 56));
 }
 
-static INLINE void
+static INLINE_LEGACY void
 le64enc_legacy(void *pp, uint64_t x)
 {
 	uint8_t * p = (uint8_t *)pp;

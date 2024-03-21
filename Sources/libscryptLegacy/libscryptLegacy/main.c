@@ -7,9 +7,9 @@
 #include "crypto_scrypt_legacy-hexconvert.h"
 #include "libscrypt_legacy.h"
 
-#define REF1 "fdbabe1c9d3472007856e7190d01e9fe7c6ad7cbc8237830e77376634b3731622eaf30d92e22a3886ff109279d9830dac727afb94a83ee6d8360cbdfa2cc0640"
+#define REF1_LEGACY "fdbabe1c9d3472007856e7190d01e9fe7c6ad7cbc8237830e77376634b3731622eaf30d92e22a3886ff109279d9830dac727afb94a83ee6d8360cbdfa2cc0640"
 
-#define REF2 "7023bdcb3afd7348461c06cd81fd38ebfda8fbba904f8e3ea9b543f6545da1f2d5432955613f0fcf62d49705242a9af9e61e85dc0d651e40dfcf017b45575887"
+#define REF2_LEGACY "7023bdcb3afd7348461c06cd81fd38ebfda8fbba904f8e3ea9b543f6545da1f2d5432955613f0fcf62d49705242a9af9e61e85dc0d651e40dfcf017b45575887"
 
 
 int main()
@@ -70,8 +70,8 @@ int main()
 
 	printf("TEST THREE: Compare hex output to reference hash output\n");
 
-	/* REF1 is a reference vector from Colin's implementation. */
-	if(strcmp(outbuf, REF1) != 0)
+	/* REF1_LEGACY is a reference vector from Colin's implementation. */
+	if(strcmp(outbuf, REF1_LEGACY) != 0)
 	{
 		printf("TEST THREE: FAILED to match reference on hash\n");
 		exit(EXIT_FAILURE);
@@ -109,7 +109,7 @@ int main()
 
 	printf("TEST SIX: Compare hex output to reference hash output\n");
 
-	if(strcmp(outbuf, REF2) != 0)
+	if(strcmp(outbuf, REF2_LEGACY) != 0)
 	{
 		printf("TEST SIX: FAILED to match reference on hash\n");
 		exit(EXIT_FAILURE);
@@ -124,7 +124,7 @@ int main()
 	* Returns -1 on error, else returns length.
 	* Correct buffer length can be determined using the below function if
 	retuired.
-	* char* dest = (char*) malloc(modp_b64_encode_len);
+	* char* dest = (char*) malloc(modp_b64_encode_len_legacy);
     * Note that this is not an exported function
 	*/
 

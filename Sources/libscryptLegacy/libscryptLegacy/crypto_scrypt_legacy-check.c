@@ -9,8 +9,8 @@
 
 #ifdef _WIN32
 /* On windows, strtok uses a thread-local static variable in strtok to
- * make strtok thread-safe.  It also neglects to provide a strtok_r. */
-#define strtok_r(str, val, saveptr) strtok((str), (val))
+ * make strtok thread-safe.  It also neglects to provide a strtok_r_legacy. */
+#define strtok_r_legacy(str, val, saveptr) strtok((str), (val))
 #endif
 
 int libscrypt_check_legacy(char *mcf, const char *password)
@@ -44,11 +44,11 @@ int libscrypt_check_legacy(char *mcf, const char *password)
 		return -1;
 	}
 
-	tok = strtok_r(mcf, "$", &saveptr);
+	tok = strtok_r_legacy(mcf, "$", &saveptr);
 	if ( !tok )
 		return -1;
 
-	tok = strtok_r(NULL, "$", &saveptr);
+	tok = strtok_r_legacy(NULL, "$", &saveptr);
 
 	if ( !tok )
 		return -1;
@@ -57,7 +57,7 @@ int libscrypt_check_legacy(char *mcf, const char *password)
 	if ( params == 0 )
 		return -1;
 
-	tok = strtok_r(NULL, "$", &saveptr);
+	tok = strtok_r_legacy(NULL, "$", &saveptr);
 
 	if ( !tok )
 		return -1;
@@ -92,7 +92,7 @@ int libscrypt_check_legacy(char *mcf, const char *password)
 	if (retval == 0)
 		return -1;
 
-	tok = strtok_r(NULL, "$", &saveptr);
+	tok = strtok_r_legacy(NULL, "$", &saveptr);
 
 	if ( !tok )
 		return -1;
